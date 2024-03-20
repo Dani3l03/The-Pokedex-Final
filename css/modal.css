@@ -1,0 +1,98 @@
+.modal-container{
+    width: 710px;
+    height: 510px;
+    top: 44px;
+    gap: 0px;
+    border-radius: 16px 0px 0px 0px;
+    opacity: 0px;
+    background: white;
+    margin: 20px;
+}
+
+.modal{
+    display: flex;
+    gap: 80px;
+}
+
+.modal-img{
+    background: url('/img/assets/bg-types/grass.svg');
+    height: 510px;
+    width: 191px;
+    display: flex;
+}
+
+.modal-img-back{
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 40px;
+}
+
+.modal-img-back img{
+    width: 200px;
+    height: 200px;
+}
+
+.modal-name{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.modal-name h3{
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 34.13px;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+.modal-name p{
+    margin-top: 5px;
+    font-size: 20px;
+    color: rgba(122, 125, 128, 1);
+}
+
+.modal-types{
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+#type-one{
+    color: rgba(104, 174, 40, 1);
+    background-color:var(--type-grass);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+#type-two{
+    color: rgb(152, 28, 247);
+    background-color: rgba(162, 52, 249, 0.5);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.modal-caracter{
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.modal-weak-list{
+    display: flex;
+    gap: 30px;
+    font-size: 18px;
+}
+
+.modal-weak{
+    margin-top: 30px;
+}
+.modal-weak p{
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}

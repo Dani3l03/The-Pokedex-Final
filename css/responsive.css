@@ -1,0 +1,77 @@
+@media (max-width: 600px){
+    
+    #background-container{
+        background-image: url('/img/assets/bg-red.svg');
+        background-position: center;
+        height: 60rem;
+    }
+    #logo{
+        width: 240px;
+        height: 60px;
+    }
+    #dropdown-btn{
+        display: none;
+    }
+    #header-container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #bag-detail{
+        background-color: #fff;
+        padding: 3px;
+        gap: 4px;
+    }
+    .bag-text{
+        font-size: 16px;
+    }
+    .bag-img img{
+        width: 20px;
+        height: 20px;
+    }
+
+    .title{
+        font-size: 54px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .text{
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    #lighting-positon{
+        margin-top: 30px;
+        padding-right: 0;
+    }
+
+    #pokeball-position img{
+        min-width: 100%;
+        min-height: 100%;
+        padding: 0;
+        margin: 0;
+        animation: none;
+        text-align: center;
+    }
+
+    #pokeball-container{
+        margin: 0;
+        min-width: 300px;
+    }
+
+    .explore-button{
+        display: none;
+        gap: 0;
+        margin: 0;
+    }
+
+    #radio-buttons{
+        display: none;
+    }
+}
+
+
+@media (max-width: 1200px){
+        
+}
