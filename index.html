@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <div id="modal-fade"></div>
     <div class="background-container">
         <div class="background-swiper">
             <nav id="nav-container">
@@ -182,11 +183,13 @@
 
     </section>
 
-    <article class="modal-container">
+    <article class="container-modal-show">
+        <div class="button-close"><button><img src="/img/assets/close.svg" alt=""></button></div>
+        <div class="modal-container">
         <div class="modal"> 
             <div class="modal-img">
-                <div class="modal-type"><img src="" alt=""></div>
-                <div class="modal-img-back"><img src="./img/assets/bulbasaur.svg" alt=""></div>
+                <div class="modal-type"><img src=""></div>
+                <div class="modal-img-back"><img src="./img/assets/bulbasaur.svg"></div>
                 
             </div>
             <div class="modal-info">
@@ -196,15 +199,15 @@
                 <div class="modal-caracter">
                     <div class="modal-poke-height">
                         <h4>Height</h4>
-                        <p>0.7m</p>
+                        <p id="height">0.7m</p>
                     </div>
                     <div class="modal-poke-weight">
                         <h4>Weight</h4>
-                        <p>6.9kg</p>
+                        <p id="weight">6.9kg</p>
                     </div>
                     <div class="modal-poke-abilities">
                         <h4>Abilities</h4>
-                        <p>Overgrow</p>
+                        <p id="abilitie">Overgrow</p>
                     </div>
                     
                 </div>
@@ -212,19 +215,76 @@
                 <div class="modal-weak">
                     <p>Weaknesses</p>
                     <ul class="modal-weak-list">
-                        <li>Fire</li>
-                        <li>Psychic</li>
-                        <li>Flying</li>
-                        <li>Ice</li>
+                        <li id="weak-one">Fire</li>
+                        <li id="weak-two">Psychic</li>
+                        <li id="weak-three">Flying</li>
+                        <li id="weak-four">Ice</li>
                     </ul>
                 </div>
 
                 <div class="modal-stats">
-
+                    <h4>Stats</h4>
+                    <div class="stats-show">                       
+                        <p>HP</p>
+                        <ul class="bars" id="HP">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            
+                        </ul>
+                        <p>Attack</p>
+                        <ul class="bars" id="attack">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            
+                        </ul>
+                        <p>Defense</p>
+                        <ul class="bars" id="defense">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            
+                        </ul>
+                        <p>Sp.Attack</p>
+                        <ul class="bars" id="sp-attack">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            
+                        </ul>
+                        <p>Sp. Defense</p>
+                        <ul class="bars" id="sp-defense">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            
+                        </ul>
+                        <p>Speed</p>
+                        <ul class="bars" id="speed">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            
+                        </ul>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
+    </div>
     </article>
     <footer class="footer-container">
         <div class="name">
@@ -237,7 +297,7 @@
         </div>
     </footer>
 
-    <script type="module" src="/js/script.js"></script>
+    <script type="module" src="/js/script.js" defer></script>
 </body>
 
 </html>

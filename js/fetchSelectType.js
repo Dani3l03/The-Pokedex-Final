@@ -5,11 +5,9 @@ export default function selectTypePokemon() {
   const pokemonTypesClick = document.querySelectorAll(".types");
   const pokemonButtonLoad = document.querySelector(".button-load");
   const pokemonErrorMsg = document.querySelector(".error-msg");
-  const results = document.querySelector(".search-numbers");
 
   pokemonTypesClick.forEach((pokeType) => {
     pokeType.addEventListener("click", async () => {
-      
       try{
       const type = pokeType.id;
       const pokeApiType = `https://pokeapi.co/api/v2/type/${type}`;
@@ -34,7 +32,6 @@ export default function selectTypePokemon() {
     }
   });
   });
-  
 
   async function getPokemonData(pokemonList) {
     const pokeApi = `https://pokeapi.co/api/v2/pokemon/${pokemonList}`;
@@ -58,6 +55,28 @@ export default function selectTypePokemon() {
       );
       const card = document.createElement("div");
       card.classList.add("pokemon-container-result");
+
+      // MODAL - criação e fetch.
+     async function createModalData(data){
+      card.addEventListener('click', () => {
+        console.log(`Card de ${data.name} clicado!`)
+        const pokemonAbilities = data.abilities[0].ability.name;
+        const pokemonHeight = data.height;
+        const pokemonHp = data.stats[0].base_stat;
+        const pokemonAttack = data.stats[1].base_stat;
+        const pokemonDefense = data.stats[2].base_stat;
+        const pokemonSpAttack = data.stats[3].base_stat;
+        const pokemonSpDefense = data.stats[4].base_stat;
+
+        console.log(pokemonHp);
+        console.log(pokemonAttack);
+        console.log(pokemonDefense);
+        console.log(pokemonSpAttack);
+        console.log(pokemonSpDefense);
+      });
+    }
+     
+      createModalData(data);
 
       const name = document.createElement("p");
       name.classList.add("poke-name");
@@ -91,6 +110,7 @@ export default function selectTypePokemon() {
       nameType.appendChild(type);
       type.appendChild(typeImage);
       pokemonContainer.appendChild(card);
+  
 
       if (pokemonTypeSearched[1]) {
         type.classList.add("type");
@@ -234,6 +254,7 @@ export default function selectTypePokemon() {
           }
         });
       }
+
       const palavrasChave = [
         "eternamax",
         "average",

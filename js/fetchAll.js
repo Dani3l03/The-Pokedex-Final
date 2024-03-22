@@ -1,4 +1,4 @@
-export default function fetchAllPokemon() {
+export default function fetchAllPokemon(){
 
   async function getPokemonData(pokemon) {
     const pokeApi = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
@@ -26,7 +26,7 @@ export default function fetchAllPokemon() {
     const data = await getPokemonData(pokemon);
     const pokemonNameSearched = data.name;
     const pokemonNumberSearched = data.id;
-    const pokemonTypeSearched = data.types.map((typeObj) => typeObj.type.name);
+    const pokemonTypeSearched = data.types.map((type) => type.type.name);
     const pokemonImageSearched =
       data.sprites.other["official-artwork"]["front_default"];
       
@@ -40,6 +40,51 @@ export default function fetchAllPokemon() {
       );
       const card = document.createElement("div");
       card.classList.add("pokemon-container-result");
+
+      // MODAL - criação e fetch.
+
+     async function createModalData(data){
+      card.addEventListener('click', () => {
+        console.log(`Card de ${data.name} clicado!`)
+
+        const pokemonAbilities = data.abilities[0].ability.name;
+        const pokemonHeight = `${(data.height)/10} m`
+        const pokemonWeight = `${(data.weight)/10} kg`;
+        const pokemonHp = data.stats[0].base_stat;
+        const pokemonAttack = data.stats[1].base_stat;
+        const pokemonDefense = data.stats[2].base_stat;
+        const pokemonSpAttack = data.stats[3].base_stat;
+        const pokemonSpDefense = data.stats[4].base_stat;
+        const pokemonSpeed = data.stats[5].base_stat;
+
+        console.log(pokemonAbilities);
+        console.log(pokemonHeight);
+        console.log(pokemonWeight);
+        console.log(pokemonHp);
+        console.log(pokemonAttack);
+        console.log(pokemonDefense);
+        console.log(pokemonSpAttack);
+        console.log(pokemonSpDefense);
+        console.log(pokemonSpeed);
+        
+        const pokemonTypesClick = document.querySelectorAll(".types");
+
+  pokemonTypesClick.forEach((pokeType) => {
+    pokeType.addEventListener("click", async () => {
+      const type = pokeType.id;
+      const pokeApiType = `https://pokeapi.co/api/v2/type/${type}`;
+      const result = await fetch(pokeApiType);
+      const data = await result.json();
+
+  
+  });
+  });
+
+      });
+     
+    }
+      
+      createModalData(data);
 
       const name = document.createElement("p");
       name.classList.add("poke-name");
@@ -213,11 +258,9 @@ export default function fetchAllPokemon() {
                 break;
           }
         });
-        
       }
     }
   }
-
 
   async function fetchAll() {
     for (let i = 1; i <= 9; i++) {
@@ -250,8 +293,10 @@ export default function fetchAllPokemon() {
         card.style.display = "none";
       });
   });
+}
   
-  }
+
+  
 
  
 
