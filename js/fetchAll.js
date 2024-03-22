@@ -75,7 +75,6 @@ export default function fetchAllPokemon(){
       const pokeApiType = `https://pokeapi.co/api/v2/type/${type}`;
       const result = await fetch(pokeApiType);
       const data = await result.json();
-
   
   });
   });
