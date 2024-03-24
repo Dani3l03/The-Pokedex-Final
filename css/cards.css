@@ -1,7 +1,8 @@
 .pokemon-container-results {
+  width: 100vh;
   display: grid;
   grid-template-columns:1fr 1fr 1fr;
-  gap: 60px;
+  gap: 50px;
 }
 
 #search-pokemon-results img {
