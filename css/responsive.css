@@ -1,6 +1,6 @@
 @media (max-width: 800px) {
   #background-container {
-    background-image: url("/img/assets/bg-red.svg");
+    background-image: url("img/assets/bg-red.svg");
     background-position: center;
     height: 60rem;
   }
