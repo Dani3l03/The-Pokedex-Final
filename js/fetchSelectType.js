@@ -448,6 +448,9 @@ export default function selectTypePokemon() {
       }
 
       const palavrasChave = [
+       "-tail",
+       "-mane",
+       "-galar",
         "eternamax",
         "average",
         "unbound",
