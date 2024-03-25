@@ -235,31 +235,30 @@ async function showPokemonData(pokemon) {
             console.log(`Dados do tipo ${type}:`, dataType);
             const pokemonWeaknesses =
             dataType.damage_relations.double_damage_from;
-            console.log(pokemonWeaknesses);
+            const usedWeaknesses = [];
 
-            const weakOne = document.getElementById("weak-one");
-            const weakTwo = document.getElementById("weak-two");
-            const weakThree = document.getElementById("weak-three");
-            const weakFour = document.getElementById("weak-four");
+            const weakElements = [
+              document.getElementById("weak-one"),
+              document.getElementById("weak-two"),
+              document.getElementById("weak-three"),
+              document.getElementById("weak-four"),
+              document.getElementById("weak-five"),
+            ];
 
-              pokemonWeaknesses.forEach((weakness, index) => {
-                let currentWeaknessElement;
-                switch (index) {
-                  case 0:
-                    currentWeaknessElement = weakOne;
-                    break;
-                  case 1:
-                    currentWeaknessElement = weakTwo;
-                    break;
-                  case 2:
-                    currentWeaknessElement = weakThree;
-                    break;
-                  default:
-                    currentWeaknessElement = weakFour;
-                }
-              currentWeaknessElement.textContent = weakness.name.charAt(0).toUpperCase() + weakness.name.slice(1);
-              currentWeaknessElement.style.backgroundColor = `var(--type-${weakness.name})`;
-              currentWeaknessElement.style.color = `var(--type-${weakness.name}-name)`;
+            pokemonWeaknesses.forEach((weakness, index) => {
+              if (!usedWeaknesses.includes(weakness.name)) {
+                const currentWeaknessElement = weakElements[index];
+                currentWeaknessElement.textContent =
+                  weakness.name.charAt(0).toUpperCase() +
+                  weakness.name.slice(1);
+                currentWeaknessElement.style.backgroundColor = `var(--type-${weakness.name})`;
+                currentWeaknessElement.style.color = `var(--type-${weakness.name}-name)`;
+                usedWeaknesses.push(weakness.name);
+              } else {
+                currentWeaknessElement.textContent = "";
+                currentWeaknessElement.style.backgroundColor = `transparent`;
+                currentWeaknessElement.style.color = "none";
+              }
             });
           }
         });

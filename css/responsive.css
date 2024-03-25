@@ -184,7 +184,7 @@
     width: 100%;
     height: 5.6rem;
     border: 1px solid #a0afba;
-    background: url("/img/assets/arrow-down-select.svg") no-repeat right 2.4rem
+    background: url("../img/assets/arrow-down-select.svg") no-repeat right 2.4rem
       center;
     padding: 0 1rem;
     border-radius: 1rem;

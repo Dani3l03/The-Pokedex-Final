@@ -1,7 +1,7 @@
 .pokemon-container-results {
   width: 100vh;
   display: grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
 }
 
@@ -107,7 +107,7 @@
   padding: 18px;
   border-radius: 4px;
   background-color: rgba(62, 117, 195, 0.2);
-  margin-left: 365px;
+  margin-left: 345px;
 }
 
 .load-pokemon:hover {

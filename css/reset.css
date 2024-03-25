@@ -8,6 +8,7 @@
 
 html {
   font-size: 65%;
+  scroll-behavior: smooth;
 }
 
 button {
@@ -35,7 +36,7 @@ ul {
   background-image: url("../img/assets/bg-red.svg");
   background-position: center;
   background-size: cover;
-  height: 86rem;
+  height: 92rem;
   background-repeat: no-repeat;
 }
 
@@ -59,7 +60,7 @@ body {
   background-image: url("../img/assets/bg-blue.svg");
   background-position: center;
   background-size: cover;
-  height: 86rem;
+  height: 92rem;
   background-repeat: no-repeat;
 }
 

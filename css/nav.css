@@ -8,6 +8,14 @@
   margin-bottom: 50px;
 }
 
+.btn-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
 #dropdown-btn {
   height: 15px;
   width: 34px;
@@ -21,10 +29,13 @@
 }
 
 .menu-button {
-  width: 25px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   position: relative;
   cursor: pointer;
+  align-items: center;
+  transition: all 0.3s;
+  left: -30px;
 }
 
 .line {
@@ -32,4 +43,76 @@
   height: 2px;
   background-color: white;
   margin: 6px 0;
+}
+
+.dropdown-menu-nav {
+  cursor: pointer;
+  padding: 40px;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+
+.dropdown-menu-nav-content {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  left: -100px;
+  display: none;
+}
+
+.content-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  transition: all 0.3s;
+  gap: 30px;
+  justify-content: start;
+  width: 240px;
+  height: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 1rem;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.FIGMA {
+  width: 240px;
+  opacity: 0.7;
+}
+
+.FIGMA:hover {
+  opacity: 1;
+}
+
+.FIGMA a {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.DEV a {
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #ffffff;
+}
+
+.DEV {
+  width: 240px;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+
+.DEV:hover {
+  opacity: 1;
+}
+
+.dropdown-menu-nav:hover .dropdown-menu-nav-content {
+  display: block;
+  border-radius: 1rem;
 }

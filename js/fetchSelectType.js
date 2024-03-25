@@ -170,43 +170,37 @@ export default function selectTypePokemon() {
             const spaText = document.getElementById("spa-text");
             const spdText = document.getElementById("spd-text");
             const speedText = document.getElementById("speed-text");
-          
+
             hpText.addEventListener("mouseover", function () {
-                hpText.textContent = `HP: ${pokemonStats.HP}`;
-                hpText.style.color = "red";
-                hpText.style.fontWeight = "800";
-              
+              hpText.textContent = `HP: ${pokemonStats.HP}`;
+              hpText.style.color = "red";
+              hpText.style.fontWeight = "800";
             });
 
             attkText.addEventListener("mouseover", function () {
-                attkText.textContent = `Attack: ${pokemonStats.attack}`;
-                attkText.style.color = "red";
-                attkText.style.fontWeight = "800";
-              
+              attkText.textContent = `Attack: ${pokemonStats.attack}`;
+              attkText.style.color = "red";
+              attkText.style.fontWeight = "800";
             });
             defText.addEventListener("mouseover", function () {
-                defText.textContent = `Defense: ${pokemonStats.defense}`;
-                defText.style.color = "red";
-                defText.style.fontWeight = "800";
-              
+              defText.textContent = `Defense: ${pokemonStats.defense}`;
+              defText.style.color = "red";
+              defText.style.fontWeight = "800";
             });
             spaText.addEventListener("mouseover", function () {
-                spaText.textContent = `Sp.Attack: ${pokemonStats.spAttack}`;
-                spaText.style.color = "red";
-                spaText.style.fontWeight = "800";
-              
+              spaText.textContent = `Sp.Attack: ${pokemonStats.spAttack}`;
+              spaText.style.color = "red";
+              spaText.style.fontWeight = "800";
             });
             spdText.addEventListener("mouseover", function () {
-                spdText.textContent = `Sp.Defense: ${pokemonStats.spDefense}`;
-                spdText.style.color = "red";
-                spdText.style.fontWeight = "800";
-              
+              spdText.textContent = `Sp.Defense: ${pokemonStats.spDefense}`;
+              spdText.style.color = "red";
+              spdText.style.fontWeight = "800";
             });
             speedText.addEventListener("mouseover", function () {
-                speedText.textContent = `Speed: ${pokemonStats.speed}`;
-                speedText.style.color = "red";
-                speedText.style.fontWeight = "800";
-              
+              speedText.textContent = `Speed: ${pokemonStats.speed}`;
+              speedText.style.color = "red";
+              speedText.style.fontWeight = "800";
             });
 
             for (const stat in stats) {
@@ -231,39 +225,33 @@ export default function selectTypePokemon() {
             const pokeApiType = `https://pokeapi.co/api/v2/type/${type}`;
             const result = await fetch(pokeApiType);
             const dataType = await result.json();
+
             const pokemonWeaknesses =
               dataType.damage_relations.double_damage_from;
-            console.log(pokemonWeaknesses);
+            const usedWeaknesses = [];
 
-            const weakOne = document.getElementById("weak-one");
-            const weakTwo = document.getElementById("weak-two");
-            const weakThree = document.getElementById("weak-three");
-            const weakFour = document.getElementById("weak-four");
-            const weakFive = document.getElementById("weak-four");
+            const weakElements = [
+              document.getElementById("weak-one"),
+              document.getElementById("weak-two"),
+              document.getElementById("weak-three"),
+              document.getElementById("weak-four"),
+              document.getElementById("weak-five"),
+            ];
 
             pokemonWeaknesses.forEach((weakness, index) => {
-              let currentWeaknessElement;
-              switch (index) {
-                case 0:
-                  currentWeaknessElement = weakOne;
-                  break;
-                case 1:
-                  currentWeaknessElement = weakTwo;
-                  break;
-                case 2:
-                  currentWeaknessElement = weakThree;
-                  break;
-                case 3:
-                  currentWeaknessElement = weakFour;
-                  break;
-                case 4:
-                  currentWeaknessElement = weakFive;
-                  break;
+              if (!usedWeaknesses.includes(weakness.name)) {
+                const currentWeaknessElement = weakElements[index];
+                currentWeaknessElement.textContent =
+                  weakness.name.charAt(0).toUpperCase() +
+                  weakness.name.slice(1);
+                currentWeaknessElement.style.backgroundColor = `var(--type-${weakness.name})`;
+                currentWeaknessElement.style.color = `var(--type-${weakness.name}-name)`;
+                usedWeaknesses.push(weakness.name);
+              } else {
+                currentWeaknessElement.textContent = "";
+                currentWeaknessElement.style.backgroundColor = `transparent`;
+                currentWeaknessElement.style.color = `none`;
               }
-              currentWeaknessElement.textContent =
-                weakness.name.charAt(0).toUpperCase() + weakness.name.slice(1);
-              currentWeaknessElement.style.backgroundColor = `var(--type-${weakness.name})`;
-              currentWeaknessElement.style.color = `var(--type-${weakness.name}-name)`;
             });
           }
         });
@@ -448,31 +436,36 @@ export default function selectTypePokemon() {
       }
 
       const palavrasChave = [
-       "-tail",
-       "-mane",
-       "-galar",
+        "-tail",
+        "-mane",
+        "-galar",
         "eternamax",
         "average",
         "unbound",
         "-male",
         "altered",
         "totem",
-        "disguised",
-        "dawn",
-        "roaming",
-        "small",
-        "large",
-        "super",
-        "power",
-        "50",
-        "ultra",
-        "limited",
-        "build",
-        "stretchy",
-        "mode",
-        "gmax",
-        "yellow",
-        "plumage",
+        "-disguised",
+        "-wash",
+        "-bolt",
+        "-shocks",
+        "-frost",
+        "-mow",
+        "-crowned",
+        "-dawn",
+        "-roaming",
+        "-small",
+        "-large",
+        "-super",
+        "-power",
+        "-ultra",
+        "-limited",
+        "-build",
+        "-stretchy",
+        "-mode",
+        "-gmax",
+        "-yellow",
+        "-plumage",
         "-dusk",
         "-meteor",
         "-incarnate",
@@ -484,7 +477,7 @@ export default function selectTypePokemon() {
         "-violet",
         "-gulping",
         "-gorging",
-        "mask",
+        "-mask",
         "-rock",
         "-libre",
         "-phd",
@@ -513,6 +506,14 @@ export default function selectTypePokemon() {
         "-low",
         "-female",
         "-shadow",
+        "-origin",
+        "-original",
+        "-trash",
+        "-school",
+        "-striped",
+        "-hero",
+        "-droopy",
+        "-wake",
       ];
 
       for (let palavra of palavrasChave) {

@@ -11,7 +11,7 @@ btnSwiperRed.classList.add("button-checked");
 pokeBall.src = "./img/assets/pokeball-red.png";
 pokeBall.classList.add("pokeball-red");
 
-swiper.addEventListener("click", () => {
+function changePokemon() {
   if (!changed) {
     pokeBall.classList.remove("pokeball-red");
     pokeBall.classList.add("pokeball-blue");
@@ -33,7 +33,14 @@ swiper.addEventListener("click", () => {
     changed = false;
     title.innerText = "Who is that Pokémon?";
   }
-});
+}
+
+swiper.addEventListener("click", changePokemon);
+
+
+setInterval(changePokemon, 12000);
+
+
 
 const pokemonTypesClick = document.querySelectorAll(".types");
 
@@ -61,3 +68,13 @@ window.onclick = function(event) {
     }
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const scrollButton = document.getElementById("exploreButton");
+  const section = document.getElementById("pokemon-types");
+
+  scrollButton.addEventListener("click", function() {
+    section.scrollIntoView(
+      {behavior: 'smooth', block: 'start' });
+  });
+});

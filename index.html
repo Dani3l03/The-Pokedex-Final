@@ -22,10 +22,25 @@
                 </div>
 
                 <div class="btn-logo">
-                    <div class="menu-button">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                        <div class="line"></div>
+
+                    <div class="dropdown-menu-nav">
+                        <div class="menu-button">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="dropdown-menu-nav-content">
+                            <div class="content-nav">
+
+                                <div class="FIGMA"><a href="https://www.figma.com/file/VrTZqONlwpd8jUBHp8LIHh/Pok%C3%A9mon---Codeboost?type=design&node-id=0-1&mode=design&t=1WcW9GuffI0Nku7q-0" target="_blank"><img src="/img/assets/icon-pokeball.svg">
+                                        <p>Figma Project</p>
+                                    </a></div>
+
+                                <div class="DEV"><a href="https://github.com/Dani3l03" target="_blank"><img src="img/assets/icon-pokeball.svg" alt="">
+                                        <p>Developer</p>
+                                    </a></div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -45,7 +60,7 @@
                     <p class="text">The perfect guide for those who want to hunt Pokémons around the world</p>
                 </div>
                 <div id="pokeball-buttons">
-                    <div class="explore-button">
+                    <div class="explore-button" id="exploreButton" onclick="scrollToSection('exploreButton')">
                         <div>
                             <p class="explore">explore</p>
                         </div>
@@ -75,7 +90,7 @@
 
         <div class="search-bar">
             <div>
-                <input type="text" placeholder="Procure um pokémon..." id="inputPokemon" name="pokebtn">
+                <input type="text" placeholder="Search a pokemon..." id="inputPokemon" name="pokebtn">
                 <button name="pokebtn" id="btn-pokemon"><i><img src="img/assets/icon-search.svg"></i></button>
             </div>
 

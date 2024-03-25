@@ -207,36 +207,32 @@ export default function fetchAllPokemon() {
             const result = await fetch(pokeApiType);
             const dataType = await result.json();
 
-            console.log(`Dados do tipo ${type}:`, dataType);
             const pokemonWeaknesses =
               dataType.damage_relations.double_damage_from;
-            console.log(pokemonWeaknesses);
+            const usedWeaknesses = [];
 
-            const weakOne = document.getElementById("weak-one");
-            const weakTwo = document.getElementById("weak-two");
-            const weakThree = document.getElementById("weak-three");
-            const weakFour = document.getElementById("weak-four");
+            const weakElements = [
+              document.getElementById("weak-one"),
+              document.getElementById("weak-two"),
+              document.getElementById("weak-three"),
+              document.getElementById("weak-four"),
+              document.getElementById("weak-five"),
+            ];
 
             pokemonWeaknesses.forEach((weakness, index) => {
-              let currentWeaknessElement;
-              switch (index) {
-                case 0:
-                  currentWeaknessElement = weakOne;
-                  break;
-                case 1:
-                  currentWeaknessElement = weakTwo;
-                  break;
-                case 2:
-                  currentWeaknessElement = weakThree;
-                  break;
-                default:
-                  currentWeaknessElement = weakFour;
+              if (!usedWeaknesses.includes(weakness.name)) {
+                const currentWeaknessElement = weakElements[index];
+                currentWeaknessElement.textContent =
+                  weakness.name.charAt(0).toUpperCase() +
+                  weakness.name.slice(1);
+                currentWeaknessElement.style.backgroundColor = `var(--type-${weakness.name})`;
+                currentWeaknessElement.style.color = `var(--type-${weakness.name}-name)`;
+                usedWeaknesses.push(weakness.name);
+              } else {
+                currentWeaknessElement.textContent = "";
+                currentWeaknessElement.style.backgroundColor = `transparent`;
+                currentWeaknessElement.style.color = "none";
               }
-
-              currentWeaknessElement.textContent =
-                weakness.name.charAt(0).toUpperCase() + weakness.name.slice(1);
-              currentWeaknessElement.style.backgroundColor = `var(--type-${weakness.name})`;
-              currentWeaknessElement.style.color = `var(--type-${weakness.name}-name)`;
             });
           }
         });
@@ -446,6 +442,7 @@ export default function fetchAllPokemon() {
     fetchAll();
     const loadMore = document.querySelector(".load-pokemon");
     loadMore.addEventListener("click", loadMorePokemon);
+
     const allCards = document.querySelectorAll(".pokemon-container-result");
     allCards.forEach((card) => {
       card.style.display = "none";
